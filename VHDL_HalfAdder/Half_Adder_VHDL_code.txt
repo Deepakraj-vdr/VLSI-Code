@@ -1,0 +1,19 @@
+//////////////////////////////////////
+//Engineer: DEEPAK RAJ V 
+// Project : Half_adder (ha)
+// Inputs  : a and b
+// Ouputs  : sum (s) and carry (c)
+// Tool    : Altera Quartus II 
+/////////////////////////////////////
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity ha is 
+port( a,b :in bit ; s,c :out bit);
+end ha;
+
+architecture data of ha is
+begin
+ s <= a xor b;
+ c <= a and b;
+end data;
