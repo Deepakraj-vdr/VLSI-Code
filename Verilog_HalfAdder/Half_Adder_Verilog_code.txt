@@ -1,0 +1,13 @@
+//////////////////////////////////////
+//Engineer: DEEPAK RAJ V 
+// Project : Half_adder (ha)
+// Inputs  : a and b
+// Ouputs  : sum (s) and carry (c)
+// Tool    : Altera Quartus II 
+/////////////////////////////////////
+module ha (a,b,s,c);
+input a,b;
+output s,c;
+and (c,a,b);
+xor (s,a,b);
+endmodule 
