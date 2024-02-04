@@ -1,0 +1,18 @@
+//////////////////////////////////////
+//Engineer   : DEEPAK RAJ V 
+//Project    : 4x1 Mux (mux4)
+//Type       : Sturctural 
+// Inputs    : i0, i1, i2, i3, s0, s1
+// Ouputs    : y
+// Components: 2x1 Mux (mux2)
+// Tool      : Altera Quartus II 
+/////////////////////////////////////
+module mux4_stu(i,s,y);
+input [3:0]i;
+input [1:0]s;
+output y;
+wire [2:1]a;
+mux2 u2(i[0],i[1],s[0],a[1]);
+mux2 u3(i[2],i[3],s[0],a[2]);
+mux2 u1(a[1],a[2],s[1],y);
+endmodule

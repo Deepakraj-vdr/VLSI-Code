@@ -1,0 +1,16 @@
+//////////////////////////////////////
+//Engineer : DEEPAK RAJ V 
+//Project  : Half_subtractor (hs)
+//Type     : Data Flow
+// Inputs  : a and b
+// Ouputs  : difference (dif) and borrow (bor)
+// Tool    : Altera Quartus II 
+/////////////////////////////////////
+module hs(a,b,dif,bor);
+input a,b;
+output dif,bor;
+wire s1;
+xor (dif,a,b);
+not (s1,a);
+and (bor,s1,b);
+endmodule

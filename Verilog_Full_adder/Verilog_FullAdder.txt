@@ -1,0 +1,18 @@
+//////////////////////////////////////
+//Engineer : DEEPAK RAJ V 
+//Project  : Full_adder (fa)
+//Type     : Data Flow
+// Inputs  : a , b , cin
+// Ouputs  : sum  and carry 
+// Tool    : Altera Quartus II 
+/////////////////////////////////////
+module fa (a,b,cin,sum, carry);
+input a,b,cin;
+output sum,carry;
+wire s1,c1,c2;
+xor(s1,a,b);
+xor(sum,s1,cin);
+and(c1,a,b);
+and(c2,s1,cin);
+or(carry,c1,c2);
+endmodule

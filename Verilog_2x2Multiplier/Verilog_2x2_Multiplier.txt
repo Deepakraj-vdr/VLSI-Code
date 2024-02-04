@@ -1,0 +1,20 @@
+//////////////////////////////////////
+//Engineer   : DEEPAK RAJ V 
+//Project    : 2x2 Multiplier (Multiplier2)
+//Type       : Sturctural 
+// Inputs    : a0, a1, b0, b1 
+// Ouputs    : p0, p1, p2, p3
+// Components: Half_Adder(ha)
+// Tool      : Altera Quartus II 
+/////////////////////////////////////
+module multiplier_stu(a,b,p);
+input[1:0]a,b;
+output[3:0]p;
+wire[4:1]s;
+and(p[0],a[0],b[0]);
+and(s[1],a[1],b[0]);
+and(s[2],a[0],b[1]);
+ha u1(s[1],s[2],p[1],s[4]);
+and(s[3],a[1],b[1]);
+ha u2(s[4],s[3],p[2],p[3]);
+endmodule

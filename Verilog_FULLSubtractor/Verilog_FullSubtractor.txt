@@ -1,0 +1,20 @@
+//////////////////////////////////////
+//Engineer : DEEPAK RAJ V 
+//Project  : FullSubtractor (fs)
+//Type     : Data Flow
+// Inputs  : a , b , c
+// Ouputs  : difference (diff) and borrow (bor)
+// Tool    : Altera Quartus II 
+/////////////////////////////////////
+module fs(a,b,c,dif,bor);
+input a,b,c;
+output dif,bor;
+wire s1,s2,s3,s4,s5;
+xor(s1,a,b);
+xor(dif,s1,c);
+not( s2,a);
+and(s4,s2,b);
+not(s3,s1);
+and(s5,s3,c);
+or(bor,s4,s5);
+endmodule
