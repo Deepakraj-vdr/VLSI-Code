@@ -1,0 +1,22 @@
+//////////////////////////////////////
+//Engineer : DEEPAK RAJ V 
+//Project  : Half_subtractor (hs)
+//Type     : Data Flow
+// Inputs  : a and b
+// Ouputs  : difference (dif) and borrow (bor)
+// Tool    : Altera Quartus II 
+/////////////////////////////////////
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity hs is 
+port ( a,b : in bit ; dif,bor : out bit);
+end hs;
+
+architecture data of hs is
+signal s1:bit;
+begin 
+dif <= a xor b;
+s1 <= not a;
+bor <= s1 and b;
+end data;

@@ -1,0 +1,29 @@
+//////////////////////////////////////
+//Engineer   : DEEPAK RAJ V 
+//Project    : 4x1 Mux (mux4)
+//Type       : Sturctural 
+// Inputs    : i0, i1, i2, i3, s0, s1
+// Ouputs    : y
+// Components: 2x1 Mux (mux2)
+// Tool      : Altera Quartus II 
+/////////////////////////////////////
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity mux4_stu is
+port(i:in bit_vector (3 downto 0); s : in bit_vector(1 downto 0); y: out bit);
+end mux4_stu;
+
+architecture stu of mux4_stu is
+
+component mux2
+port (i0,i1,s: in bit ; y: out bit);
+end component;
+
+signal a: bit_vector(2 downto 1);
+
+begin
+u2: mux2 port map(i(0),i(1),s(0),a(1));
+u3: mux2 port map(i(2),i(3),s(0),a(2));
+u1: mux2 port map(a(1),a(2),s(1),y);
+end stu;

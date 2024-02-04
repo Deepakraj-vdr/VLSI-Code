@@ -1,0 +1,29 @@
+//////////////////////////////////////
+//Engineer   : DEEPAK RAJ V 
+//Project    : 2x2 Multiplier (Multiplier2)
+//Type       : Sturctural 
+// Inputs    : a0, a1, b0, b1 
+// Ouputs    : p0, p1, p2, p3
+// Components: Half_Adder(ha)
+// Tool      : Altera Quartus II 
+/////////////////////////////////////
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity multiplier2_stu is
+port(a,b : in bit_vector(1 downto 0); p: out bit_vector(3 downto 0));
+end multiplier2_stu;
+
+architecture stu of multiplier2_stu is
+component ha
+port(a,b: in bit; s,c: out bit);
+end component;
+signal s: bit_vector(4 downto 1);
+begin
+p(0)<= a(0) and b(0);
+s(1)<= a(1) and b(0);
+s(2)<= a(0) and b(1);
+u1: ha port map (s(1),s(2),p(1),s(4));
+s(3) <= a(1) and b(1);
+u2: ha port map(s(3),s(4),p(2),p(3));
+end stu;

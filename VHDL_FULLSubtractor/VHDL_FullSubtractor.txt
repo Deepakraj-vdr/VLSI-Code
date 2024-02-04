@@ -1,0 +1,26 @@
+//////////////////////////////////////
+//Engineer : DEEPAK RAJ V 
+//Project  : FullSubtractor (fs)
+//Type     : Data Flow
+// Inputs  : a , b , c
+// Ouputs  : difference (diff) and borrow (bor)
+// Tool    : Altera Quartus II 
+/////////////////////////////////////
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity fs is 
+port ( a,b,c: in bit ; diff,bor: out bit);
+end fs;
+
+architecture data of fs is
+signal s1, s2, s3, s4 ,s5:bit;
+begin
+s1 <= a xor b;
+diff <= s1 xor c;
+s2 <= not a;
+s4 <= s2 and b;
+s3 <= not s1;
+s5 <= s3 and c;
+bor <= s4 or s5;
+end data;

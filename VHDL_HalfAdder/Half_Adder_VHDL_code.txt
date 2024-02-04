@@ -1,6 +1,7 @@
 //////////////////////////////////////
-//Engineer: DEEPAK RAJ V 
-// Project : Half_adder (ha)
+//Engineer : DEEPAK RAJ V 
+//Project  : Half_adder (ha)
+//Type     : Data Flow
 // Inputs  : a and b
 // Ouputs  : sum (s) and carry (c)
 // Tool    : Altera Quartus II 

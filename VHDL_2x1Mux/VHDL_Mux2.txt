@@ -1,0 +1,23 @@
+//////////////////////////////////////
+//Engineer : DEEPAK RAJ V 
+//Project  : 2x1 Mux (mux2)
+//Type     : Data Flow
+// Inputs  : i0 , i1 , s
+// Ouputs  : y
+// Tool    : Altera Quartus II 
+/////////////////////////////////////
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity mux2 is
+port (i0, i1 , s: in bit ; y: out bit);
+end mux2;
+
+architecture data of mux2 is
+signal s1, s2, s3:bit;
+begin
+s1 <= not s;
+s2 <= s1 and i0;
+s3 <= s and i1;
+y <= s2 or s3;
+end data;
